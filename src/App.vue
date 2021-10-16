@@ -1,28 +1,56 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img class="logo-desafio" alt="Vue logo" src="./assets/logo.png" /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item nav-link"><router-link :to="{ name: 'inicio' }">Inicio</router-link></li>
+            <li class="nav-item nav-link"><router-link :to="{ name: 'busquedas' }">Busquedas</router-link></li>
+            <li class="nav-item nav-link"><router-link :to="{ name: 'ventas' }">Ventas</router-link></li>
+            <li class="nav-item nav-link"><router-link :to="{ name: 'total' }">Total</router-link></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <transition name="vista">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+export default {};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+.vista-enter-active,
+.vista-leave-active {
+  transition: opacity 0.1s;
 }
+.vista-enter,
+.vista-leave-to {
+  opacity: 0;
+}
+.logo-desafio {
+  width: 280px;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  
+}
+
 </style>
