@@ -1,12 +1,7 @@
 <template>
-<div class="container mt-10">
-    <section>
-      <h3>Cantidad de juegos con stock</h3>
+<div >
         <JuegosconStock />
-  
-    </section>
-
-    </div>
+</div>
 </template>
 
 <script>

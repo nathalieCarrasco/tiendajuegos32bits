@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <div class="container mx-4">DISPONIBLES:<b> {{ $store.getters.listaJuegosConStock }}</b></div>
-    <hr>
-    <h2>LISTA DE JUEGOS EN TIENDA </h2>
+  <div class="card text-center  " >
+    <div class="card-header"> Cantidad De Juegos Con stock :<b> {{ $store.getters.listaJuegosConStock }}</b></div>
+    <h2>LISTA DE JUEGOS</h2>
     <ul>
       <li v-for="(juego, index) in $store.state.listaJuegos"
           :key="index" 
