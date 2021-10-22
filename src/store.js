@@ -6,6 +6,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     busqueda: "",
+    ventadejuegos:[],
     listaJuegos: [
       {codigo: "0001", nombre: "Sekiro", stock: 100, precio: 30000, color: "red", destacado: "true"},
       {codigo: "0002", nombre: "Fifa 21", stock: 100, precio: 25000, color: "blue", destacado: "false"},
@@ -28,19 +29,40 @@ const store = new Vuex.Store({
       } else {
         return state.listaJuegos.filter(juego => juego.nombre.toLowerCase().includes(state.busqueda.toLowerCase()))
       }
-    }
+    },
+  
+    // segunda parte desafio primero crear cantidad de juegos con stock
+
+  juegosConStock(state){
+    return state.listaJuegos.filter(juego => juego.stock > 0)
   },
+  listaJuegosConStock(state, getters){
+    return getters.juegosConStock.length
+  },
+
+},
+
   // recordar que primero se escribe en mayuscula y luego en minuscula mismo nombre 
   mutations: {
     SET_BUSQUEDA(state, nuevaBusqueda) {
       state.busqueda = nuevaBusqueda
     }
   },
+  AGREGAR_CANTIDAD(state, index){
+    state.listaJuegos[index].stock++ // agregar 1 
+  },
+  RESTAR_CANTIDAD(state, index){
+    state.listaJuegos[index].stock-- // restar uno 
+  },
+
+  
+
   actions: {
     setBusqueda(context, nuevaBusqueda) {
       context.commit("SET_BUSQUEDA", nuevaBusqueda)
-    }
-  }
-});
+    },
+  
+  
+}});
 
 export default store;

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-      <div class="container-fluid">
+    <nav class=" navbar-expand-lg  navbar-light bg-dark">
+      <div class="container-fluid ">
         <a class="navbar-brand" href="#"><img class="logo-desafio" alt="Vue logo" src="./assets/logo.png" /></a>
         <button
           class="navbar-toggler"
@@ -14,8 +14,8 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+        <div class="nav justify-content-center nav nav-tabs collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ">
             <li class="nav-item nav-link"><router-link :to="{ name: 'inicio' }">Inicio</router-link></li>
             <li class="nav-item nav-link"><router-link :to="{ name: 'busquedas' }">Busquedas</router-link></li>
             <li class="nav-item nav-link"><router-link :to="{ name: 'ventas' }">Ventas</router-link></li>

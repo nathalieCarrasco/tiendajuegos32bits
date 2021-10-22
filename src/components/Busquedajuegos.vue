@@ -11,7 +11,7 @@
             id="basic-url"
             :value="$store.state.busqueda"
             @input="$store.dispatch('setBusqueda', $event.target.value)"
-            placeholder="Escribe Nombre o Codigo del Juego"
+            placeholder="Escribe Nombre del Juego"
         />
         </div>
     </div>
